@@ -10,6 +10,7 @@
 }
 
 :root {
+    --black: #40383C;
     --dark: #BF505A;
     --light: #E5737D;
     --white: #F2D0D7;
@@ -37,7 +38,7 @@ body {
 
 .container-buttons button {
     cursor: pointer;
-    width: 33.3%;
+    width: 33.33%;
     height: 35px;
     background-color: var(--dark);
     color: var(--white);
@@ -54,7 +55,44 @@ body {
     width: 350px;
     height: 350px;
     margin: 25px auto;
-    background-color: var(--light);
+    position: relative;
+}
+
+.timer-display {
+    font-size: 80px;
+    font-weight: bold;
+    color: var(--white);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.timer-circle svg {
+    width: 350px;
+    height: 350px;
+}
+
+.timer-circle svg circle {
+    width: 330px;
+    height: 330px;
+    fill: var(--light);
+    stroke: var(--white);
+    stroke-width: 10;
+    stroke-dasharray: 1070;
+    stroke-dashoffset: 1070;
+    rotate: 270deg;
+    transform: translate(-100%);
+}
+
+.timer-circle svg circle:nth-child(1) {
+    stroke-dashoffset: 0;
+    stroke: var(--black);
+}
+
+.timer-circle svg circle:nth-child(2) {
+    stroke: var(--white);
+    transition: stroke-dashoffset 1s;
 }
 
 .startButton {

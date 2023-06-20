@@ -9,19 +9,22 @@
     <script src="script.js" defer></script>
 </head>
 <body>
-    <!-- <header class="header"></header> -->
     <main class="main-section">
         <div class="container-buttons">
-            <button class="clicked-button" >Pomodoro</button>
-            <button>Descanso</button>
-            <button>Longo Descanso</button>
+            <button id="pomodoro" class="clicked-button" onclick="changeAction(id)">Pomodoro</button>
+            <button id="short-break" onclick="changeAction(id)">Descanso</button>
+            <button id="long-break" onclick="changeAction(id)">Longo Descanso</button>
         </div>
         <div class="timer-container">
-            <div id="timer"></div>
+            <div class="timer-circle">
+                <svg>
+                    <circle r="48%" cx="50%" cy="50%"></circle>
+                    <circle id="circleProgress" r="48%" cx="50%" cy="50%"></circle>
+                </svg>
+            </div>
+            <div id="timer" class="timer-display">25:00</div>
         </div>
-        <input type="number" id="duration">
         <button id="startButton" class="startButton">COMEÇAR</button>
-        <!-- <button>Parar</button> -->
         <button id="restartButton" class="startButton" hidden>RECOMEÇAR</button>
     </main>
     <footer class="footer">
