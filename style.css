@@ -76,7 +76,7 @@ body {
 .timer-circle svg circle {
     width: 330px;
     height: 330px;
-    fill: var(--light);
+    fill: none;
     stroke: var(--white);
     stroke-width: 10;
     stroke-dasharray: 1070;
@@ -85,12 +85,16 @@ body {
     transform: translate(-100%);
 }
 
-.timer-circle svg circle:nth-child(1) {
+.timer-circle svg circle#circleBackground {
+    fill: var(--light);
+}
+
+.timer-circle svg circle:nth-child(2) {
     stroke-dashoffset: 0;
     stroke: var(--black);
 }
 
-.timer-circle svg circle:nth-child(2) {
+.timer-circle svg circle:nth-child(3) {
     stroke: var(--white);
     transition: stroke-dashoffset 1s;
 }
@@ -129,4 +133,3 @@ body {
 .footer a.github-reference:hover {
     border-bottom: 2px solid var(--white);
 }
-

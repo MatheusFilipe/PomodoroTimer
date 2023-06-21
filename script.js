@@ -15,10 +15,14 @@ function startTimer(duration, display) {
 
     intervalId = setInterval(function () {
         if (timer == 0) {
+            let id = document.getElementsByClassName('clicked-button')[0].id
+            alarmAudio.play()
             restart();
         }
 
-        display.textContent = timeFormat(timer);
+        let time = timeFormat(timer);
+        display.textContent = time;
+        document.title = time + " - Pomodoro Timer";
         progress(timer, duration);
 
         if (--timer < 0) {
@@ -41,6 +45,7 @@ startButton.onclick = function() {
 function restart() {
     restartButton.style.display = 'none';
     startButton.style.display = 'block';
+    document.title = "Pomodoro Timer";
     try {
         clearInterval(intervalId);
     } catch (error) {}
@@ -63,9 +68,9 @@ function changeAction(id) {
 function progress(num, duration) {
     circle.style.strokeDashoffset = 1070 - (1070 * num / duration);// 100% = 1070 --> x% = y --> y = 10.7x --> calc(1070 - 10.7x)
 }
-
-var circle = document.querySelector('#circleProgress');
-var display = document.querySelector("#timer");
+const circle = document.querySelector('#circleProgress');
+const display = document.querySelector("#timer");
+const alarmAudio = new Audio('./assets/alarm.mp3');
 var durations = {
     'pomodoro': 1500, // 25 minutes --> 1500 seconds
     'short-break': 300, // 5 minutes --> 300 seconds
