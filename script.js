@@ -79,8 +79,8 @@ function progress(num, duration) {
 const circle = document.querySelector('#circleProgress');
 const display = document.querySelector("#timer");
 const alarmAudio = new Audio('./assets/alarm.mp3');
-var durations = {
+var durations = { // default
     'pomodoro': 1500, // 25 minutes --> 1500 seconds
-    'short-break': 2, // 5 minutes --> 300 seconds
+    'short-break': 300, // 5 minutes --> 300 seconds
     'long-break': 900 // 15 minutes --> 900 seconds
 }
