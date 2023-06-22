@@ -77,7 +77,6 @@ body {
     width: 330px;
     height: 330px;
     fill: none;
-    stroke: var(--white);
     stroke-width: 10;
     stroke-dasharray: 1070;
     stroke-dashoffset: 1070;

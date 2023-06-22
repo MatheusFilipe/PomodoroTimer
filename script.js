@@ -62,17 +62,25 @@ function changeAction(id) {
     let buttonToChange = document.getElementById(id);
     clickedButton.classList.remove('clicked-button');
     buttonToChange.classList.add('clicked-button');
+    if (id !== 'pomodoro') {
+        document.documentElement.style.setProperty('--light', '#66C3A7');
+        document.documentElement.style.setProperty('--dark', '#31866B');
+    } else {
+        document.documentElement.style.setProperty('--light', '#E5737D');
+        document.documentElement.style.setProperty('--dark', '#BF505A');
+    }
     restart();
 }
 
 function progress(num, duration) {
     circle.style.strokeDashoffset = 1070 - (1070 * num / duration);// 100% = 1070 --> x% = y --> y = 10.7x --> calc(1070 - 10.7x)
 }
+
 const circle = document.querySelector('#circleProgress');
 const display = document.querySelector("#timer");
 const alarmAudio = new Audio('./assets/alarm.mp3');
 var durations = {
     'pomodoro': 1500, // 25 minutes --> 1500 seconds
-    'short-break': 300, // 5 minutes --> 300 seconds
+    'short-break': 2, // 5 minutes --> 300 seconds
     'long-break': 900 // 15 minutes --> 900 seconds
 }
