@@ -28,6 +28,58 @@
         </div>
         <button id="startButton" class="startButton">COMEÇAR</button>
         <button id="restartButton" class="startButton" hidden>RECOMEÇAR</button>
+        <button id="button-settings" onclick="settingsPage()"><img src="./assets/settings.png" alt="Settings"></button>
+        <div id="settings-page" hidden>
+            <div id="settings-container">
+                <div class="header-settings-page">
+                    <h2>Configurações</h2>
+                    <button class="close-button" onclick="closeSettingsPage()"><img src="./assets/close-button.png" alt="Close settings page"></button>
+                </div>
+                
+                <div id="timer-setting">
+                    <div class="title-setting"><img src="./assets/timer-icon.png" alt="Timer icon"><h3>Timer</h3></div>
+                    <div class="timer-setting-grid">
+                        <div>
+                            <p>Pomodoro</p>
+                            <div class="input-box">
+                                <button class="button-quantity button-minus" id="button-minus-pomodoro">-</button>
+                                <input type="number" name="setting-timer-pomodoro" id="settingTimerPomodoro" class="input-time">
+                                <button class="button-quantity button-plus" id="button-plus-pomodoro">+</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Descanso</p>
+                            <div class="input-box">
+                                <button class="button-quantity button-minus" id="button-minus-short-break">-</button>
+                                <input type="number" name="setting-timer-short-break" id="settingTimerShortBreak" class="input-time">
+                                <button class="button-quantity button-plus" id="button-plus-short-break">+</button>
+                            </div>
+                        </div>
+                        <div>
+                            <p>Longo Descanso</p>
+                            <div class="input-box">
+                                <button class="button-quantity button-minus" id="button-minus-long-break">-</button>
+                                <input type="number" name="setting-timer-long-break" id="settingTimerLongBreak" class="input-time">
+                                <button class="button-quantity button-plus" id="button-plus-long-break">+</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="restart-setting">
+                    <div class="title-setting"><img src="./assets/restart-icon.png" alt="Restart icon"><h3>Começo automático</h3></div>
+                    <div class="restart-setting-option">
+                        <p>Começar pomodoro automaticamente</p>
+                        <button class="button-restart-setting-option" id="settingRestartPomodoro"><div class="option-background"><div class="option-circle"></div></div></button>
+                    </div>
+                    <div class="restart-setting-option">
+                        <p>Começar descanso automaticamente</p>
+                        <button class="button-restart-setting-option" id="settingRestartBreak"><div class="option-background"><div class="option-circle"></div></div></button>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
     </main>
     <footer class="footer">
         Publicado por <a href="https://github.com/MatheusFilipe" class="github-reference" target=”_blank”>Matheus Filipe</a>

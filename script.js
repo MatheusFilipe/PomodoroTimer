@@ -76,6 +76,14 @@ function progress(num, duration) {
     circle.style.strokeDashoffset = 1070 - (1070 * num / duration);// 100% = 1070 --> x% = y --> y = 10.7x --> calc(1070 - 10.7x)
 }
 
+function settingsPage() {
+    document.querySelector('div#settings-page').style.display = 'block';
+}
+
+function closeSettingsPage() {
+    document.querySelector('div#settings-page').style.display = 'none';
+}
+
 const circle = document.querySelector('#circleProgress');
 const display = document.querySelector("#timer");
 const alarmAudio = new Audio('./assets/alarm.mp3');
